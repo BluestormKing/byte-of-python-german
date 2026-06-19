@@ -167,7 +167,7 @@ $ python
 # Eine neue Variable namens 'a' erzeugen
 >>> a = 5
 
->>>dir()
+>>> dir()
 ['__builtins__', '__doc__', '__name__', '__package__', 'sys', 'a']
 
 # Namen/Variable löschen:
@@ -197,7 +197,7 @@ Inzwischen sollten Sie begonnen haben, die Hierarchie in der Organisation Ihrer 
 
 Pakete sind einfach Ordner mit Modulen und einer speziellen Datei `__init__.py`, die Python anzeigt, dass dieser Ordner etwas Besonderes ist, weil er Python-Module enthält.
 
-Angenommen, Sie möchten ein Paket namens "welt" erstellen, mit Unterpaketen namens "asien" , "afrika"  usw., und diese Unterpakete enthalten wiederum Module wie "indien", "madasgaskar" usw.
+Angenommen, Sie möchten ein Paket namens "welt" erstellen, mit Unterpaketen namens "asien" , "afrika"  usw., und diese Unterpakete enthalten wiederum Module wie "indien", "madagaskar" usw.
 
 So würde die Ordnerstruktur aussehen:
 
