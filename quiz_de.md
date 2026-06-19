@@ -68,8 +68,8 @@ print(len(gedicht.splitlines()))
 
 ```python
 # solution for chapter basic,  task 2, variant C
-poem="\n".join(["Eins","Zwo","g'suffa!"])
-print(poem)
+gedicht="\n".join(["Eins","Zwo","g'suffa!"])
+print(gedicht)
 print(len(gedicht.splitlines()))
 ```
 
