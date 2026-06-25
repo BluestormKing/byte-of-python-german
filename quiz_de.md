@@ -4,11 +4,11 @@
 
 ### Aufgabe basic 1
 
-* Erstelle eine Variable mit dem Namen `sentence` und weise ihr den Wert eines Strings mit elf Wörtern zu (beliebige Wörter).
-* Gib (den Wert der Variable) `sentence` aus.
+* Erstelle eine Variable mit dem Namen `satz` und weise ihr den Wert eines Strings mit elf Wörtern zu (beliebige Wörter).
+* Gib (den Wert der Variable) `satz` aus.
 * Füge diese Codezeile am Ende deines Programms hinzu:
 ```python
-print(len(sentence.split()))
+print(len(satz.split()))
 ```
 
 Hinweis: Die Python-`split()`-Funktion zählt die Wörter in einem String, indem sie die Leerzeichen zwischen den Wörtern zählt, daher lautet die genaue Aufgabe: „Schreibe 11 Wörter mit 10 Leerzeichen zwischen ihnen“.
@@ -19,9 +19,9 @@ Hinweis: Die Python-`split()`-Funktion zählt die Wörter in einem String, indem
 
 ```python
 # solution for basic 1
-sentence = "Fischers Fritz fischt frische Fische. Frische Fische fischt Fischer's Fritz."
-print(sentence)
-print(len(sentence.split()))
+satz = "Fischers Fritz fischt frische Fische. Frische Fische fischt Fischer's Fritz."
+print(satz)
+print(len(satz.split()))
 ```
 
 </details>
@@ -31,7 +31,7 @@ print(len(sentence.split()))
 
 * Erstelle eine Variable mit dem Namen `gedicht` und weise ihr einen String mit einigen Wörtern zu.
 * Der String soll über drei Textzeilen gehen.
-* Gib den Wert der Variable poem aus.
+* Gib den Wert der Variable `gedicht` aus.
 * Füge diese Codezeile am Ende deines Programms hinzu:
 ```python
 print(len(gedicht.splitlines()))
@@ -78,7 +78,7 @@ print(len(gedicht.splitlines()))
 
 ### Aufgabe basic 3
 Erstelle eine Variable mit dem Namen `gehalt` und weise ihr den Wert `4000` zu.
-Gib den Wert von `salary` aus.
+Gib den Wert von `gehalt` aus.
 
 **mögliche Lösungen**:
 
@@ -241,8 +241,8 @@ Welche der folgenden Python-Ausdrücke ergeben den Wert False?
 1. `10 / 5 == 2.0`
 2. `10 // 5 == 2`
 3. `10 % 3 == 1`
-4. `( 5 > 1) und ( 5 > 7)`
-5. `( 5 > 1) oder (5 > 7)`
+4. `( 5 > 1) and ( 5 > 7)`
+5. `( 5 > 1) or (5 > 7)`
 6. `not (5 > 7)`
 
 **Korrekte Antwort(en)**:
