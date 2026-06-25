@@ -280,24 +280,24 @@ print(x)
 
 ### Aufgabe control_flow 1
 
-In den Aufgaben für dieses Kapitel verwende (einige der) Python-Anweisungen, die im Kapitel [Kontrollfluss](./control_flow_de.md) beschrieben sind (wie `if`, `elif`, `else`, `for`, `while`, `continue`, `break`).
+In den Aufgaben für dieses Kapitel verwende ich (einige der) Python-Anweisungen, die im Kapitel [Kontrollfluss](./control_flow_de.md) beschrieben sind (wie `if`, `elif`, `else`, `for`, `while`, `continue`, `break`).
 
 - Schreibe ein Programm, das den Benutzer ein Passwort eingeben lässt und eine Antwort über das Passwort gibt:
-- Wenn das Passwort SeCrEt ist, soll das Programm `Correct` ausgeben und beenden.
-- Wenn der Benutzer ein falsches Passwort eingibt, soll das Programm `Wrong` ausgeben und erneut nach einem Passwort fragen.
-- Nach 3 fehlgeschlagenen Versuchen soll das Programm `You failed 3 times` ausgeben und beenden.
-- Bevor das Programm endet, soll es `bye!` ausgeben.
+- Wenn das Passwort `GeHeiM` ist, soll das Programm `Korrekt` ausgeben und beenden.
+- Wenn der Benutzer ein falsches Passwort eingibt, soll das Programm `Falsch` ausgeben und erneut nach einem Passwort fragen.
+- Nach 3 fehlgeschlagenen Versuchen soll das Programm `3 Falscheingaben` ausgeben und beenden.
+- Bevor das Programm endet, soll es `Programm beendet` ausgeben.
 
 Beispielausgabe:
 
 ```
-Please enter password: >>>secret
-Wrong
-Please enter password: >>>Secret
-Wrong
-Please enter password: >>>SeCrEt
-Correct
-bye!
+Bitte Passwort eingeben: >>>geheim
+Falsch
+Bitte Passwort eingeben: >>>GEHEIM
+Falsch
+Bitte Passwort eingeben: >>>GeHeiM
+Korrekt
+Programm beendet
 ```
 
 **mögliche Lösungen**:
@@ -309,15 +309,15 @@ bye!
 ```python
 # solution for chapter control flow,  task 1, variant A
 for a in range(3):
-    text = input("Please enter password: >>>")
-    if text == "SeCrEt":
-        print("Correct")
+    text = input("Bitte Passwort eingeben: >>>")
+    if text == "GeHeiM":
+        print("Korrekt")
         break
     else:   
-        print("Wrong")
+        print("Falsch")
 else:
-    print("You failed 3 times")
-print("bye!")
+    print("3 Falscheingaben")
+print("Programm beendet")
 ```
 
 #### Variante B
@@ -325,67 +325,67 @@ print("bye!")
 ```python 
 # solution for chapter control flow,  task 1, variant B
 for _ in range(3):
-    if input("Please enter password: >>>") == "SeCrEt":
-        print("Correct")
+    if input("Bitte Passwort eingeben: >>>") == "GeHeiM":
+        print("Korrekt")
         break
-    print("Wrong")
+    print("Falsch")
 else:
-    print("You failed 3 times")
-print("bye!")
+    print("3 Falscheingaben")
+print("Programm beendet")
 ```
 
 #### Variante C
 
 ```python
 # solution for chapter control flow,  task 1, variant C
-attempt = 1
-max_attempts = 3
-valid_password = "SeCrEt"
+versuch = 1
+max_versuche = 3
+gültiges_passwort = "GeHeiM"
 while True:
-    print(f"this is attempt {attempt} of {max_attempts}")
-    text = input("Please enter password: >>>")
-    if text == valid_password:
-        print("Correct")
+    print(f"Dies ist Versuch {versuch} von {max_versuche}")
+    text = input("Bitte Passwort eingeben: >>>")
+    if text == gültiges_passwort:
+        print("Korrekt")
         break
     else:
-        print("Wrong")
+        print("Falsch")
     attempt += 1
     if attempt > 3:
-        print("You failed 3 times")
+        print("3 Fehlversuche")
         break
-print("bye!")
+print("Programm beendet")
 ```
 
 #### Variante D
 
 ```python
 # solution for chapter control flow,  task 1, variant D
-attempt = 0
-while attempt < 3:
-    attempt += 1
-    if input("Please enter password: >>>") == "SeCrEt":
-        print("Correct")
+versuch = 0
+while versuch < 3:
+    versuch += 1
+    if input("Bitte Passwort eingeben: >>>") == "GeHeiM":
+        print("Korrekt")
         break
-    print("Wrong")
+    print("Falsch")
 else:
-    print("You failed 3 times")
-print("bye!")
+    print("3 Fehlversuche")
+print("Programm beendet")
 ```
 
 #### Variante E
 
 ```python
 # solution for chapter control flow,  task 1, variant E
-attempt = 1
-while input("Please enter password: >>>") != "SeCrEt":
-    print("wrong")
-    attempt += 1
-    if attempt > 3:
-        print("You failed 3 times")
+versuch = 1
+while input("Bitte Passwort eingeben: >>>") != "GeHeiM":
+    print("Falsch")
+    versuch += 1
+    if versuch > 3:
+        print("3 Falscheingaben")
         break
 else:
-    print("correct")
-print("bye!")
+    print("Korrekt")
+print("Programm beendet")
 ```
 
 </details>
@@ -397,9 +397,9 @@ Das folgende Programm funktioniert **nicht** wie beabsichtigt.
 Was das Programm eigentlich tun sollte:
 
 - Das Programm soll den Benutzer ein Passwort eingeben lassen.
-- Wenn der Benutzer das richtige Passwort (secret) eingibt, soll das Programm correct ausgeben und beenden.
+- Wenn der Benutzer das richtige Passwort (`secret`) eingibt, soll das Programm `korrekt` ausgeben und beenden.
 - Wenn der Benutzer ein falsches Passwort eingibt, soll das Programm erneut fragen.
-- Wenn der Benutzer 3-mal ein falsches Passwort eingibt, soll das Programm `You failed 3 times` ausgeben und beenden.
+- Wenn der Benutzer 3-mal ein falsches Passwort eingibt, soll das Programm `3 Falscheingaben` ausgeben und beenden.
 
 Deine Aufgaben nach der Analyse des Programms:
 
@@ -407,23 +407,23 @@ Deine Aufgaben nach der Analyse des Programms:
 - Schlage vor, wie man das Programm ändern kann, damit es wie gewünscht funktioniert.
 
 
-Hier der Quellcode des nicht funktionierenden Programms:
+Hier der Quellcode des _nicht_ funktionierenden Programms:
 
 ```python
 # problem  control flow,  task 2, 
-password = "secret"
-max_attempts = 3
-attempt = 1
-while attempt < max_attempts:
-    print(f"Attempt {attempt} of {max_attempts}")
-    guess = input("enter password: >>>")
-    if guess == password:
-        print("correct")
+passwort = "secret"
+max_versuche = 3
+versuch = 1
+while versuch < max_versuche:
+    print(f"Versuch {versuch} von {max_versuche}")
+    eingabe = input("Bitte Passwort eingeben: >>>")
+    if eingabe == passwort:
+        print("korrekt")
         break
-    attempt += 1
+    versuch += 1
 else:
-    print("You failed 3 times")
-print("bye")
+    print("3 Falscheingaben")
+print("Programm beendet")
 ```
 
 **mögliche Lösung**:
@@ -435,7 +435,7 @@ Das Problem liegt in Zeile 5.
 Korrektur von Zeile 5:
 
 ```python
-while attempt <= max_attempts:
+while versuch <= max_versuche:
 ```
 
 </details>
@@ -447,20 +447,20 @@ Bitte korrigiere das folgende Programm so, dass es nur eine einzige Antwort ausg
 
 ```python
 # problem control_flow task 3
-income = input("please enter your monthly (netto) income in €")
-income = int(income)
-if income < 1000:
-    print("you do not earn much...")
-if income < 2000:
-    print("it could be better....")
-elif income < 3000:
-    print("nice")
-if income < 4000:
-    print("very nice")
-if income < 5000:
-    print("fantastic")
+einkommen = input("Monatsgehalt (netto) in € eingeben: >>>")
+einkommen = int(einkommen)
+if einkommen < 1000:
+    print("du bist unterbezahlt...")
+if einkommen < 2000:
+    print("da ist noch Luft nach oben....")
+elif einkommen < 3000:
+    print("nettes Gehalt")
+if einkommen < 4000:
+    print("Sehr nettes Gehalt")
+if einkommen < 5000:
+    print("unglaublich gutes Gehalt")
 else:
-    print("really??")
+    print("wirklich ??")
 ```
 
 **mögliche Lösung**:
@@ -468,20 +468,20 @@ else:
 <details> <summary>Klicken zum Ausklappen</summary>
 
 ```python
-income = input("please enter your monthly (netto) income in €")
-income = int(income)
-if income < 1000:
-    print("you do not earn much...")
-elif income < 2000:
-    print("it could be better....")
-elif income < 3000:
-    print("nice")
-elif income < 4000:
-    print("very nice")
-elif income < 5000:
-    print("fantastic")
+einkommen = input("Monatsgehalt (netto) in € eingeben: >>>")
+einkommen = int(einkommen)
+if einkommen < 1000:
+    print("du bist unterbezahlt...")
+elif einkommen < 2000:
+    print("da ist noch Luft nach oben....")
+elif einkommen < 3000:
+    print("nettes Gehalt")
+elif einkommen < 4000:
+    print("Sehr nettes Gehalt")
+elif einkommen < 5000:
+    print("unglaublich gutes Gehalt")
 else:
-    print("really??")
+    print("wirklich ??")
 ```
 
 </details>
